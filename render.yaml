@@ -6,10 +6,6 @@ services:
     buildCommand: npm ci && npm run build
     startCommand: npm start
     healthCheckPath: /api/auth/providers
-    disk:
-      name: uploads
-      mountPath: /var/data/uploads
-      sizeGB: 10
     envVars:
       - key: NODE_ENV
         value: production
@@ -21,8 +17,6 @@ services:
         sync: false
       - key: NEXTAUTH_SECRET
         generateValue: true
-      - key: UPLOAD_DIR
-        value: /var/data/uploads
 
 databases:
   - name: pitstop-db
