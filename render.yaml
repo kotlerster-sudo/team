@@ -21,4 +21,3 @@ services:
 databases:
   - name: pitstop-db
     plan: free
-    databaseName: pitstop
