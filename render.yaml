@@ -2,7 +2,7 @@ services:
   - type: web
     name: pitstop
     runtime: node
-    plan: starter
+    plan: free
     buildCommand: npm ci && npm run build
     startCommand: npm start
     healthCheckPath: /api/auth/providers
@@ -26,5 +26,5 @@ services:
 
 databases:
   - name: pitstop-db
-    plan: starter
+    plan: free
     databaseName: pitstop
