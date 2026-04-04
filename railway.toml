@@ -1,8 +1,5 @@
 [build]
-builder = "nixpacks"
-
-[build.nixpacksPlan.variables]
-NIXPACKS_NODE_VERSION = "20.19.0"
+builder = "dockerfile"
 
 [deploy]
 startCommand = "npm start"
