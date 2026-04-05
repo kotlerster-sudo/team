@@ -1,15 +1,15 @@
 #!/bin/sh
 set -e
 
-echo "DATABASE_URL is set: ${DATABASE_URL:+yes}${DATABASE_URL:-NO - variable is empty or missing}"
+echo "DB_URL is set: ${DB_URL:+yes}${DB_URL:-NO - variable is empty or missing}"
 
-if [ -z "$DATABASE_URL" ]; then
-  echo "ERROR: DATABASE_URL is not set. Cannot run migrations or start."
+if [ -z "$DB_URL" ]; then
+  echo "ERROR: DB_URL is not set."
   exit 1
 fi
 
 echo "Running database migrations..."
-DATABASE_URL="$DATABASE_URL" npx prisma migrate deploy
+DATABASE_URL="$DB_URL" npx prisma migrate deploy
 
 echo "Starting Next.js..."
-exec npx next start
+DATABASE_URL="$DB_URL" exec npx next start
