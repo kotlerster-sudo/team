@@ -2,7 +2,7 @@
 builder = "dockerfile"
 
 [deploy]
-startCommand = "npm start"
+startCommand = "sh start.sh"
 healthcheckPath = "/api/auth/providers"
 healthcheckTimeout = 300
 restartPolicyType = "on_failure"
